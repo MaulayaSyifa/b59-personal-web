@@ -39,9 +39,7 @@
                     <label for="content">Description</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="content" name="content" style="height: 200px" required>
-                        {{data.content}}
-                    </textarea>
+                    <textarea id="content" name="content" style="height: 200px" required>{{data.content}}</textarea>
                 </div>
             </div>
             <div class="row">
@@ -50,23 +48,64 @@
                 </div>
                 <div class="col-75" style="padding: 1rem 0">
                     <ul class="project-tech">
+
+                        {{#if (equal data.check1 "Javascript")}}
+                        <li>
+                            <input type="checkbox" id="check1" name="check1" value="Javascript" checked />
+                            <label for="check1">Javascript</label>
+                        </li>
+                        {{else}}
                         <li>
                             <input type="checkbox" id="check1" name="check1" value="Javascript" />
                             <label for="check1">Javascript</label>
                         </li>
+                        {{/if}}
+
+                        {{#if (equal data.check2 "Node")}}
+                        <li>
+                            <input type="checkbox" id="check2" name="check2" value="Node" checked />
+                            <label for="check2">Node Js</label>
+                        </li>
+                        {{else}}
                         <li>
                             <input type="checkbox" id="check2" name="check2" value="Node" />
                             <label for="check2">Node Js</label>
                         </li>
+                        {{/if}}
+
+                        {{#if (equal data.check3 "React")}}
+                        <li>
+                            <input type="checkbox" id="check3" name="check3" value="React" checked />
+                            <label for="check3">React Js</label>
+                        </li>
+                        {{else}}
                         <li>
                             <input type="checkbox" id="check3" name="check3" value="React" />
                             <label for="check3">React Js</label>
                         </li>
+                        {{/if}}
+
+                        {{#if (equal data.check4 "Postgre")}}
+                        <li>
+                            <input type="checkbox" id="check4" name="check4" value="Postgre" checked />
+                            <label for="check4">PostgreSQL</label>
+                        </li>
+                        {{else}}
                         <li>
                             <input type="checkbox" id="check4" name="check4" value="Postgre" />
                             <label for="check4">PostgreSQL</label>
                         </li>
+                        {{/if}}
                     </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <span><br></span>
+                </div>
+                <div id="preview" class="col-75" style="border: 1px solid #ccc; border-radius: 0.5rem; padding: 0.5rem">
+                    <img src="{{data.image}}" alt="image preview" class="img-thumbnail d-none"
+                        style="width: 100%; object-fit: cover;">
                 </div>
             </div>
             <div class="row">

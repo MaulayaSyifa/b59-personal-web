@@ -25,20 +25,20 @@
             </div>
             {{#if messages.error}}
             <div class="row">
-                <div class="col-25" role="alert">
+                <div class="col-25">
                     <span><br></span>
                 </div>
-                <div class="col-75" role="alert">
+                <div class="col-75 alert alert-danger" role="alert">
                     {{messages.error}}
                 </div>
             </div>
             {{/if}}
             {{#if messages.success}}
             <div class="row">
-                <div class="col-25" role="alert">
+                <div class="col-25">
                     <span><br></span>
                 </div>
-                <div class="col-75" role="alert">
+                <div class="col-75 alert alert-success" role="alert">
                     {{messages.success}}
                 </div>
             </div>

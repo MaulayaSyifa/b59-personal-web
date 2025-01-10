@@ -73,7 +73,6 @@
                     <input type="file" id="fileUpload" name="image" style="width: 100%" />
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-25">
                     <span><br></span>
@@ -83,10 +82,6 @@
                         style="width: 100%; object-fit: cover;">
                 </div>
             </div>
-            <div class="">
-
-            </div>
-
             <div class="row">
                 <div class="col-25">
                     <span><br></span>
@@ -108,16 +103,14 @@
         // Jika ada file gambar yang dipilih
         if (file) {
             const reader = new FileReader();
-
             reader.onload = function (e) {
                 // Mengganti konten div dengan gambar
                 previewDiv.innerHTML = `<img src="${e.target.result}" style="width: 100%; object-fit: cover;" alt="Preview">`;
             }
-
             reader.readAsDataURL(file);
         } else {
             // Jika tidak ada gambar, tampilkan pesan
-            previewDiv.innerHTML = '<img src="" style="display: none;" alt="Preview">';
+            previewDiv.style = '<img src="" style="display: none;" alt="Preview">';
         }
     });
 </script>

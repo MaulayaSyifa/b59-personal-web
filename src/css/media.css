@@ -26,6 +26,12 @@
 	.container {
 		max-width: 768px;
 	}
+	.project-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-between;
+		gap: 1.5rem;
+	}
 }
 
 /* md */
@@ -44,11 +50,27 @@
 		flex-direction: row;
 		justify-content: first baseline;
 	}
-	/* .info-tech {
+	.project-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-	} */
+		grid-template-columns: 1fr;
+		justify-content: space-between;
+		gap: 1.5rem;
+	}
+	.hero {
+		flex-direction: column;
+	}
+	.hero-image img {
+		width: 100%;
+	}
+	.hero-link {
+		justify-content: center;
+	}
+	.hero-social {
+		justify-content: center;
+	}
+	.hero-desc h1 {
+		text-align: center;
+	}
 }
 
 /* sm */
