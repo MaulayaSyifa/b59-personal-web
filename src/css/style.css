@@ -601,7 +601,7 @@ input[type="file"]::file-selector-button:hover {
 
 .form-auth {
 	width: 50vw;
-	margin: 4vw auto;
+	margin: 8vw auto;
 }
 .link-regist {
 	color: var(--color-text);
