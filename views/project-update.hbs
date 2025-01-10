@@ -1,0 +1,92 @@
+{{#> layout title="Update Project" user=user }}
+
+<div class="container">
+    <div class="project-container" id="formProject">
+        <form action="/project-update/{{data.id}}?_method=PATCH" method="POST" enctype="multipart/form-data">
+            <legend>
+                <h1>UPDATE PROJECT</h1>
+            </legend>
+            <hr />
+            <div class="row">
+                <div class="col-25">
+                    <label for="title">Title</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="title" name="title" value="{{data.title}}" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25 col-hide" style="margin-top: 0">
+                    <label></label>
+                </div>
+                <div class="col-75" style="margin-top: 0">
+                    <div class="form-date">
+                        <div class="col-50">
+                            <label for="startDate" style="margin-top: 0">Start Date</label>
+                            <input type="date" id="startDate" name="start" class="form-input" value="{{data.start}}"
+                                required />
+                        </div>
+                        <div class="col-50">
+                            <label for="endDate" style="margin-top: 0">End Date</label>
+                            <input type="date" id="endDate" name="end" class="form-input" value="{{data.end}}"
+                                required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="content">Description</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="content" name="content" style="height: 200px" required>
+                        {{data.content}}
+                    </textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Technologies</label>
+                </div>
+                <div class="col-75" style="padding: 1rem 0">
+                    <ul class="project-tech">
+                        <li>
+                            <input type="checkbox" id="check1" name="check1" value="Javascript" />
+                            <label for="check1">Javascript</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check2" name="check2" value="Node" />
+                            <label for="check2">Node Js</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check3" name="check3" value="React" />
+                            <label for="check3">React Js</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check4" name="check4" value="Postgre" />
+                            <label for="check4">PostgreSQL</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="fileUpload">Upload Image</label>
+                </div>
+                <div class="col-75" style="border: 1px solid #ccc; border-radius: 0.5rem; padding: 0.5rem">
+                    <input type="file" id="fileUpload" name="image" style="width: 100%" value="{{data.image}}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <span><br></span>
+                </div>
+                <div class="col-75">
+                    <button type="submit" class="button">UPDATE PROJECT</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{/layout}}

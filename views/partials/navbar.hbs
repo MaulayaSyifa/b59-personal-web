@@ -1,0 +1,54 @@
+<nav>
+    <ul class="sidebar">
+        <li onclick="hideSidebar()">
+            <a href="#"><i class="fa-solid fa-xmark fa-xl"></i></a>
+        </li>
+        {{#if user}}
+        <li><a href="#">Hello, {{user.username}}</a></li>
+        {{else}}
+        <li><a href="/login">Login</a></li>
+        {{/if}}
+        <li><a href="/" class="{{#if (equal currentPage 'Home' )}}link-active{{/if}}">Home</a></li>
+        <li><a href="/project" class="{{#if (equal currentPage 'Project' )}}link-active{{/if}}">Project</a></li>
+        <li><a href="/testimonial" class="{{#if (equal currentPage 'Testimonial' )}}link-active{{/if}}">Testimonial</a>
+        </li>
+        <li><a href="/contact" class="{{#if (equal currentPage 'Contact' )}}link-active{{/if}}">Contact</a></li>
+        {{#if user}}
+        <li><a href="/logout">Logout</a></li>
+        {{/if}}
+    </ul>
+    <ul>
+        <li>
+            <a href="/"><img src="/assets/icon/colors-icon.svg" alt="web-icon" style="width: 1.5rem" /></a>
+        </li>
+        {{#if user}}
+        <li class="hide-on-mobile">
+            <a href="">Hello, {{user.username}}</a>
+        </li>
+        {{else}}
+        <li class="hide-on-mobile">
+            <a href="/login">Login</a>
+        </li>
+        {{/if}}
+        <li class="hide-on-mobile">
+            <a href="/" class="{{#if (equal currentPage 'Home' )}}link-active{{/if}}">Home</a>
+        </li>
+        <li class="hide-on-mobile">
+            <a href="/project" class="{{#if (equal currentPage 'Project' )}}link-active{{/if}}">Project</a>
+        </li>
+        <li class="hide-on-mobile">
+            <a href="/testimonial" class="{{#if (equal currentPage 'Testimonial' )}}link-active{{/if}}">Testimonial</a>
+        </li>
+        <li class="hide-on-mobile">
+            <a href="/contact" class="{{#if (equal currentPage 'Contact' )}}link-active{{/if}}">Contact</a>
+        </li>
+        <li class="menu-button" onclick="showSidebar()">
+            <a href="#"><i class="fa-solid fa-bars fa-xl"></i></a>
+        </li>
+        {{#if user}}
+        <li class="hide-on-mobile">
+            <a href="/logout">Logout</a>
+        </li>
+        {{/if}}
+    </ul>
+</nav>

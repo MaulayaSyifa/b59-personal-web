@@ -1,0 +1,84 @@
+{{#> layout title="Detail Project" user=user}}
+
+<div class="container">
+    <h1 style="text-align: center; margin-top: 4vw;">{{data.title}} </h1><br>
+    <hr>
+    <div class="detail-container">
+        <div class="detail">
+            <div class="detail-image">
+                <img src="{{data.image}}" alt="project image">
+            </div>
+            <div class="detail-info">
+                <div class="detail-info-time">
+                    <h3 style="margin-top: 0;">Posted At</h3>
+                    <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;{{formatDateToWIB data.createdAt}}</p>
+                    <h3 style="margin-top: 0;">Last Updated</h3>
+                    <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;{{formatDateToWIB data.updatedAt}}</p>
+                    <h3 style="margin-top: 0;">Duration</h3>
+                    <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;From : {{data.start}}</p>
+                    <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;To : {{data.end}}</p>
+                    <p><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;{{getDurationTime data.start data.end}}</p>
+                </div>
+                <div class="detail-info-tech">
+                    <h3 style="margin-top: 0;">Technologies</h3>
+                    <div class="info-tech">
+                        {{#if (equal data.check1 "Javascript")}}
+                        <div class="tech">
+                            <img src="/assets/icon/javascript-icon.svg" title="Javascript" />
+                            <p>Javascript</p>
+                        </div>
+                        {{else}}
+                        <div class="tech" style="display: none;">
+                            <img src="/assets/icon/javascript-icon.svg" title="Javascript" />
+                            <p>Javascript</p>
+                        </div>
+                        {{/if}}
+
+                        {{#if (equal data.check2 "Node")}}
+                        <div class="tech">
+                            <img src="/assets/icon/node-js-icon.svg" title="Node Js" />
+                            <p>Node Js</p>
+                        </div>
+                        {{else}}
+                        <div class="tech" style="display: none;">
+                            <img src="/assets/icon/node-js-icon.svg" title="Node Js" />
+                            <p>Node Js</p>
+                        </div>
+                        {{/if}}
+
+                        {{#if (equal data.check3 "React")}}
+                        <div class="tech">
+                            <img src="/assets/icon/react-js-icon.svg" title="React Js" />
+                            <p>React Js</p>
+                        </div>
+                        {{else}}
+                        <div class="tech" style="display: none;">
+                            <img src="/assets/icon/react-js-icon.svg" title="React Js" />
+                            <p>React Js</p>
+                        </div>
+                        {{/if}}
+
+                        {{#if (equal data.check4 "Postgre")}}
+                        <div class="tech">
+                            <img src="/assets/icon/postgresql-icon.svg" title="PostgreSQL" />
+                            <p>PostgreSQL</p>
+                        </div>
+                        {{else}}
+                        <div class="tech" style="display: none;">
+                            <img src="/assets/icon/postgresql-icon.svg" title="PostgreSQL" />
+                            <p>PostgreSQL</p>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content">
+            <p>
+                {{data.content}}
+            </p>
+        </div>
+    </div>
+</div>
+
+{{/layout}}

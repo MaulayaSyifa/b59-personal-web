@@ -1,0 +1,112 @@
+{{#> layout title='Project' user=user }}
+
+<div class="container">
+    <div class="project-container">
+        <h1 style="text-align: center;">MY PROJECT</h1><br>
+        <hr><br>
+        <div class="project-grid" id="projectGrid">
+            {{#if user}}
+            <div class="project-card project-card-add" style="display: ;">
+                <div class="project-card-add">
+                    <img src="/assets/icon/add-card.svg" alt="add"><br>
+                    <h3 style="font-weight: 500; text-align: center">
+                        ADD<br>NEW PROJECT
+                    </h3>
+                </div>
+                <a href="/project-add" class="project-card-link"></a>
+            </div>
+            {{/if}}
+            {{#each projects}}
+            <div class="project-card">
+                <div class="project-card-image">
+                    <img src="{{this.image}}" alt="Project Image" />
+                </div>
+                <div class="project-card-name">
+                    <h3>{{this.title}}</h3>
+                </div>
+                <div class="project-card-time">
+                    <p>
+                        Posted at {{formatDateToWIB this.createdAt}} <br>
+                        Author : {{this.user.username}} <br>
+                        Duration : {{getDurationTime this.start this.end}}
+                    </p>
+                </div>
+                <div class="project-card-content">
+                    <p> {{truncateText this.content}} </p>
+                </div>
+                <div class="project-card-tech">
+                    {{#if (equal this.check1 "Javascript")}}
+                    <div class="tech-border">
+                        <img src="/assets/icon/javascript-icon.svg" alt="Javascript" title="Javascript" />
+                    </div>
+                    {{else}}
+                    <div class="tech-border" style="display: none;">
+                        <img src="/assets/icon/javascript-icon.svg" alt="Javascript" title="Javascript" />
+                    </div>
+                    {{/if}}
+                    {{#if (equal this.check2 "Node")}}
+                    <div class="tech-border">
+                        <img src="/assets/icon/node-js-icon.svg" alt="Node Js" title="Node Js" />
+                    </div>
+                    {{else}}
+                    <div class="tech-border" style="display: none;">
+                        <img src="/assets/icon/node-js-icon.svg" alt="Node Js" title="Node Js" />
+                    </div>
+                    {{/if}}
+                    {{#if (equal this.check3 "React")}}
+                    <div class="tech-border">
+                        <img src="/assets/icon/react-js-icon.svg" alt="React" title="React" />
+                    </div>
+                    {{else}}
+                    <div class="tech-border" style="display: none;">
+                        <img src="/assets/icon/react-js-icon.svg" alt="React" title="React" />
+                    </div>
+                    {{/if}}
+
+                    {{#if (equal this.check4 "Postgre")}}
+                    <div class="tech-border">
+                        <img src="/assets/icon/postgresql-icon.svg" alt="PostgreSQL" title="PostgreSQL" />
+                    </div>
+                    {{else}}
+                    <div class="tech-border" style="display: none;">
+                        <img src="/assets/icon/postgresql-icon.svg" alt="PostgreSQL" title="PostgreSQL" />
+                    </div>
+                    {{/if}}
+                </div>
+                {{#if (equal ../user.id this.user_id)}}
+                <hr>
+                <div class="project-card-action">
+                    <div style="width: 100%;">
+                        <a href="/project-update/{{this.id}}" type="submit">
+                            <button class="button project-btn" id="edit">EDIT</button></a>
+                    </div>
+                    <div style="width: 100%;">
+                        <form action="/project-delete/{{this.id}}?_method=DELETE" method="post">
+                            <button type="submit" class="button secondary project-btn" id="delete">DELETE</button>
+                        </form>
+                    </div>
+                </div>
+                {{else}}
+                <hr>
+                <div class="project-card-action">
+                    <div style="width: 100%;">
+                        <a href="/project-edit/{{this.id}}" type="submit">
+                            <button class="button project-btn" disabled>EDIT</button></a>
+                    </div>
+                    <div style="width: 100%;">
+                        <form action="/project-delete/{{this.id}}" method="post">
+                            <button type="submit" class="button project-btn" disabled>DELETE</button>
+                        </form>
+                    </div>
+                </div>
+                {{/if}}
+                <a href="/project-detail/{{this.id}}" class="project-card-link"></a>
+            </div>
+            {{else}}
+            <p>You haven't posted any project</p>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{/layout}}

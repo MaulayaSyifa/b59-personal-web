@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Web | {{title}}</title>
+    <link rel="icon" href="/assets/icon/colors-icon.svg" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/media.css" />
+    <link rel="stylesheet" href="/src/css/sweetalert2.min.css">
+    <script src="/src/js/sweetalert2.min.js"></script>
+    <script src="https://kit.fontawesome.com/4d8badcc53.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    {{> navbar currentPage = title}}
+
+    {{> @partial-block}}
+
+    {{> footer}}
+
+    <script type="text/javascript" src="/src/js/navbar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+{{#> layout title="Contact"}}
+
+<div class="container">
+    <div class="form-contact" id="formContact">
+        <form action="">
+            <legend>
+                <h1>GET IN TOUCH</h1>
+            </legend>
+            <hr />
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="name" placeholder="your name.." />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="someone@example.com" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="phone">Phone number</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="phone" name="phone" placeholder="08xxx" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="subject" name="subject" placeholder="email subject" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="skill">Skill</label>
+                </div>
+                <div class="col-75">
+                    <div class="custom-select">
+                        <select id="skill" name="skill">
+                            <option>Fullstack</option>
+                            <option>Frontend</option>
+                            <option>Backend</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="message">Messages</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="message" name="message" placeholder="your messages.."
+                        style="height: 200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <span><br></span>
+                </div>
+                <div class="col-75">
+                    <input type="submit" class="button" value="SEND" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/src/js/form-contact.js"></script>
+
+{{/layout}}

@@ -1,0 +1,88 @@
+/* Desktop container utility class */
+.container {
+	max-width: 1536px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+	.container {
+		max-width: 1280px;
+	}
+}
+
+/* xl */
+@media (max-width: 1280px) {
+	.container {
+		max-width: 1024px;
+	}
+}
+
+/* lg */
+@media (max-width: 1024px) {
+	.container {
+		max-width: 768px;
+	}
+}
+
+/* md */
+@media (max-width: 768px) {
+	.container {
+		max-width: 640px;
+	}
+	.detail {
+		flex-direction: column;
+	}
+	.detail-image {
+		width: 100%;
+	}
+	.detail-info {
+		width: 100%;
+		flex-direction: row;
+		justify-content: first baseline;
+	}
+	/* .info-tech {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	} */
+}
+
+/* sm */
+@media (max-width: 640px) {
+	.container {
+		max-width: 475px;
+	}
+	.hide-on-mobile {
+		display: none;
+	}
+	.menu-button {
+		display: block;
+	}
+	.col-25,
+	.col-50,
+	.col-75 {
+		width: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.col-hide {
+		display: none;
+	}
+	.project-tech {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+/* xs */
+@media (max-width: 475px) {
+	.container {
+		width: 100%;
+	}
+	.sidebar {
+		width: 100%;
+	}
+}

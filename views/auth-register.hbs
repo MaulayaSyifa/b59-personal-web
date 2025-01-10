@@ -1,0 +1,71 @@
+{{#> layout title="Register"}}
+
+<div class="container">
+    <div class="form-auth" id="formAuth">
+        <form action="/register" method="post">
+            <legend>
+                <h1>CREATE NEW ACCOUNT</h1>
+            </legend>
+            <hr />
+            <div class="row">
+                <div class="col-25">
+                    <label for="username">Username</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="username" name="username" placeholder="username" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="someone@example.com" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="password" name="password" placeholder="password" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <span><br></span>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="rePassword" name="re-password" placeholder="re-enter password" />
+                </div>
+            </div>
+            {{#if messages.error}}
+            <div class="alert alert-danger" role="alert">
+                {{messages.error}}
+            </div>
+            {{/if}}
+            <div class="row">
+                <div class="col-25">
+                    <span><br></span>
+                </div>
+                <div class="col-75">
+                    <input type="submit" class="button" value="REGISTER" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <span><br></span>
+                </div>
+                <div class="col-75">
+                    <p>Already have account?
+                        <a href="/login" class="link-regist">Login</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src=""></script>
+
+{{/layout}}

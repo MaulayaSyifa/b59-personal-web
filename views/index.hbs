@@ -1,0 +1,72 @@
+{{#> layout title="Home" user=user }}
+
+<div class="container">
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-desc">
+                <h1>Hi, Welcome to my hut</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolores sint eius
+                    laborum laboriosam ullam blanditiis vero corporis eligendi dolore! Enim eaque id iure
+                    incidunt? Aliquid a mollitia laborum veniam. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Illo nulla pariatur maxime quam atque iste corporis suscipit ex
+                    labore temporibus laboriosam, exercitationem vero nostrum! Quae magnam natus fuga odio
+                    rem!
+                </p>
+            </div>
+            <div class="hero-link">
+                <a href="/contact">
+                    <button class="button">Contact Me</button>
+                </a>
+                <a href="/resume">
+                    <button class="button secondary">My Resume</button>
+                </a>
+            </div>
+            <div>
+                <p style="margin-bottom: 1em; text-align: left;">Connect with Me</p>
+            </div>
+            <div class="hero-social">
+                <div>
+                    <a href="https://www.linkedin.com/in/syifamaulaya" target="_blank">
+                        <img src="/assets/icon/linkedin-icon.svg" alt="linkedin" title="Linkedin" /></a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/maulayasyifa_" target="_blank">
+                        <img src="/assets/icon/instagram-icon.svg" alt="instagram" title="Instagram" /></a>
+                </div>
+                <div>
+                    <a href="https://www.threads.net/@alterashy" target="_blank">
+                        <img src="/assets/icon/threads-icon.svg" alt="threads" title="Threads" /></a>
+                </div>
+                <div>
+                    <a href="https://wa.me/628816538436" target="_blank">
+                        <img src="/assets/icon/whatsapp-icon.svg" alt="whatsapp" title="Whatsapp" /></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="hero-image">
+                <div>
+                    <img src="/assets/image/Syifa Maulaya_Hitam Putih.jpg" alt="hero-image" />
+                </div>
+                <div class="hero-name">
+                    <h2>SYIFA MAULAYA</h2>
+                    <p>Fullstack Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#if showAlert}}
+<script>
+    Swal.fire({
+        title: 'Hello!',
+        text: 'This is an alert triggered from the server.',
+        icon: 'info',
+        confirmButtonText: 'Okay'
+    });
+</script>
+{{/if}}
+
+{{/layout}}

@@ -1,0 +1,21 @@
+{{#> layout title="Testimonial" user=user }}
+
+<div class="container">
+    <div class="testimonial-container">
+        <h1 style="text-align: center;">TESTIMONIALS</h1><br>
+        <hr>
+        <div class="testimonial-star">
+            <button class="button secondary btn-fit" onclick="showAllTestimonials()">ALL</button>
+            <button class="button secondary btn-fit" onclick="filterTestimonialByStar(1)">1</button>
+            <button class="button secondary btn-fit" onclick="filterTestimonialByStar(2)">2</button>
+            <button class="button secondary btn-fit" onclick="filterTestimonialByStar(3)">3</button>
+            <button class="button secondary btn-fit" onclick="filterTestimonialByStar(4)">4</button>
+            <button class="button secondary btn-fit" onclick="filterTestimonialByStar(5)">5</button>
+        </div>
+        <hr><br>
+    </div>
+</div>
+
+<script type="text/javascript" src="/src/js/testimonial.js"></script>
+
+{{/layout}}
